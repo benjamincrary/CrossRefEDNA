@@ -18,12 +18,12 @@ query_crossref_loop <- function(email) {
 
   for (i in loopseq) {
     if(i == 1) {
-      x <-  fromJSON(q2, flatten=TRUE)
+      x <-  jsonlite:::fromJSON(q2, flatten=TRUE)
       curs <- x$message$`next-cursor`
       curs <- gsub("\\+", "%2B", curs)
       results <- rbind_pages(list(results, x$message$items))
     } else {
-      x <-  fromJSON(paste0(q3, curs), flatten=TRUE)
+      x <-  jsonlite::fromJSON(paste0(q3, curs), flatten=TRUE)
       curs <- x$message$`next-cursor`
       curs <- gsub("\\+", "%2B", curs)
       results <- rbind_pages(list(results, x$message$items))
