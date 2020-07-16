@@ -11,7 +11,7 @@
 update_edna_knowledge_center <- function(destination, backup, email) {
 
   #1. query
-  results <- query_crossref_edna(destination, backup, email)
+  results <- query_crossref_edna(backup, email)
 
   #2. filter
   filtered_edna <- filter_edna_results(results, destination)
