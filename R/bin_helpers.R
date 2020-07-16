@@ -75,9 +75,15 @@ extractDateList <- function(x) {
 }
 
 extractDateFromParts <- function(partslist) {
-  date <- lubridate::ymd(partslist)
+  z <- partslist
+  z2 <- purrr::map(z, function(x) {append(x,c(1,1))})
+  z3 <- purrr::map(z2, function(x) {head(x, n=3)})
+
+  date <- lubridate::ymd(z3)
+
   return(date)
 }
+
 
 #' Title
 #'
