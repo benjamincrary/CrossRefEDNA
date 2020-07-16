@@ -20,6 +20,5 @@ Imports:
     tidytext,
     stringr,
     dplyr,
-    magrittr,
     lubridate,
     tidyr

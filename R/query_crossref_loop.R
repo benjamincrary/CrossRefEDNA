@@ -13,7 +13,8 @@ query_crossref_loop <- function(email) {
 
   #set up loop
   results <- NULL
-  loops <- query_n_loops(email)
+  #loops <- query_n_loops(email)
+  loops <- 2 #dev option only
   loopseq <- seq(1:loops)
 
   for (i in loopseq) {

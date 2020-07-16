@@ -1,1 +1,7 @@
 .Rproj.user
+data/all_results_20200716/
+data/eDNA_201001-202006.rds
+data/filtered_eDNA_201001-202006.rds
+filteredResults_toBinning.rds
+Input.RDS
+AllPubs.RDS

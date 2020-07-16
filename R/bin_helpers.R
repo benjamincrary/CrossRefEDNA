@@ -35,7 +35,7 @@ listAuthor <- function(x){
 #'
 #' @examples
 extractLeadAuthor <- function(x) {
-  xx <- map(x, listAuthor)
+  xx <- purrr::map(x, listAuthor)
   xxx <- unlist(xx)
   return(xxx)
 }
@@ -67,13 +67,17 @@ extractDate <- function(x) {
 #' @examples
 extractDateList <- function(x) {
   zz <- as.data.frame(x)
-  zzz <- zz %>% separate(`date-parts`, c("x", "year", "month", "day","xx")) %>%
-    mutate(day = ifelse(day == "", 1, day)) %>%
-    mutate(d = paste(month, day, year, sep="/")) %>%
-    mutate(d = as.Date(d, format="%m/%d/%Y",origin="1970-01-01"))
+  zzz <- zz %>% tidyr::separate(`date-parts`, c("x", "year", "month", "day","xx")) %>%
+    dplyr::mutate(day = ifelse(day == "", 1, day)) %>%
+    dplyr::mutate(d = paste(month, day, year, sep="/")) %>%
+    dplyr::mutate(d = as.Date(d, format="%m/%d/%Y",origin="1970-01-01"))
   zzz$d
 }
 
+extractDateFromParts <- function(partslist) {
+  date <- lubridate::ymd(partslist)
+  return(date)
+}
 
 #' Title
 #'
@@ -98,12 +102,12 @@ extractURL <- function(x) {
 #'
 #' @examples
 listConstruct <- function(results, binset) {
-  out <- binset %>% map(
+  out <- binset %>% purrr::map(
     function(x) {
       results %>%
-        select(title, subtitle, abstract, subject) %>%
-        mutate_all(funs(grepl(paste0("\\b",na.omit(x), "\\b", collapse='|'), ., ignore.case=TRUE))) %>%
-        reduce(`|`)
+        dplyr::select(title, subtitle, abstract, subject) %>%
+        dplyr::mutate_all(dplyr::funs(grepl(paste0("\\b",na.omit(x), "\\b", collapse='|'), ., ignore.case=TRUE))) %>%
+        purrr::reduce(`|`)
     }
   )
   summary <- as.data.frame(out)
