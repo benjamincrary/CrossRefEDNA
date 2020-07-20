@@ -19,5 +19,10 @@ update_edna_knowledge_center <- function(destination, backup, email) {
   #3. bin
   bin_filtered_results(filtered_edna, destination)
 
+  #4. check and update inputs
+  finalize_update(destination)
+
+  #5. commit changes
+
 
 }
