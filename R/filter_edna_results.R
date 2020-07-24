@@ -22,7 +22,7 @@ filter_edna_results <- function(results, destination) {
                               !grepl("extracellular|Extracellular|biofilm|Biofilm", title))
 
   saveRDS(filtered_results, paste0(destination, "filtered_eDNA_201001-", substr(enddate, 1,4), substr(enddate,6,7),".rds" ))
-  saveRDS(filtered_results, paste0(destination, "filteredResults_toBinning.rds"))
+  #saveRDS(filtered_results, paste0(destination, "filteredResults_toBinning.rds"))
 
 
   return(filtered_results)

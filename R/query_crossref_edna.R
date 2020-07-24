@@ -20,8 +20,8 @@ query_crossref_edna <- function(backup, email ) {
   results <- query_crossref_loop(email)
 
   #save loop results
-  saveRDS(results,
-          paste0(backup_destination, "eDNA_201001-", substr(enddate, 1,4), substr(enddate,6,7), ".rds"))
+  #saveRDS(results,
+  #        paste0(backup_destination, "eDNA_201001-", substr(enddate, 1,4), substr(enddate,6,7), ".rds"))
 
   return(results)
 }
