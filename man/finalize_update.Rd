@@ -4,7 +4,7 @@
 \alias{finalize_update}
 \title{finalize update}
 \usage{
-finalize_update(destination)
+finalize_update(input_destination)
 }
 \arguments{
 \item{destination}{}

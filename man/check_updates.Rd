@@ -4,7 +4,7 @@
 \alias{check_updates}
 \title{check updates}
 \usage{
-check_updates(destination)
+check_updates(input_destination)
 }
 \arguments{
 \item{destination}{}

@@ -4,7 +4,7 @@
 \alias{check_updated_publist}
 \title{check updated publist}
 \usage{
-check_updated_publist(destination)
+check_updated_publist(input_destination)
 }
 \arguments{
 \item{destination}{}

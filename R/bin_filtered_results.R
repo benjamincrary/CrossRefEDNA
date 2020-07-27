@@ -3,14 +3,16 @@
 #' @param filtered_edna
 #' @param destination
 #'
+#' @importFrom magrittr %>%
+#'
 #' @return
 #' @export
 #'
 #' @examples
-bin_filtered_results <- function(filtered_edna, destination) {
+bin_filtered_results <- function(filtered_edna, input_destination, data_location) {
 
-  taxonomies <- load_taxonomies(destination)
-  categories <- load_categories(destination)
+  taxonomies <- load_taxonomies(data_location)
+  categories <- load_categories(data_location)
 
   # bin and consolidate
   taxResults <- listConstruct(filtered_edna, taxonomies) %>%
@@ -69,8 +71,8 @@ bin_filtered_results <- function(filtered_edna, destination) {
     dplyr::distinct()
 
 
-  saveRDS(Summary,paste0(destination, "Input.RDS"))
-  saveRDS(AllPubs,paste0(destination, "AllPubs.RDS"))
+  saveRDS(Summary,paste0(input_destination, "Input.RDS"))
+  saveRDS(AllPubs,paste0(input_destination, "AllPubs.RDS"))
 
 
 }

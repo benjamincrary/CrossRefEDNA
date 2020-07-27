@@ -4,7 +4,7 @@
 \alias{check_updated_inputs}
 \title{check updated inputs}
 \usage{
-check_updated_inputs(destination)
+check_updated_inputs(input_destination)
 }
 \arguments{
 \item{destination}{}

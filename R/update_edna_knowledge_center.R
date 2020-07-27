@@ -8,19 +8,19 @@
 #' @export
 #'
 #' @examples
-update_edna_knowledge_center <- function(destination, backup, email) {
+update_edna_knowledge_center <- function(input_destination, data_location, email) {
 
   #1. query
-  results <- query_crossref_edna(backup, email)
+  results <- query_crossref_edna(input_destination, email)
 
   #2. filter
-  filtered_edna <- filter_edna_results(results, destination)
+  filtered_edna <- filter_edna_results(results, input_destination)
 
   #3. bin
-  bin_filtered_results(filtered_edna, destination)
+  bin_filtered_results(filtered_edna, input_destination, data_location)
 
   #4. check and update inputs
-  finalize_update(destination)
+  finalize_update(input_destination)
 
   #5. commit changes
 

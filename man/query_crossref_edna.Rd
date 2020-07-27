@@ -4,7 +4,7 @@
 \alias{query_crossref_edna}
 \title{query_crossref_edna}
 \usage{
-query_crossref_edna(backup, email)
+query_crossref_edna(input_destination, email)
 }
 \arguments{
 \item{email}{}

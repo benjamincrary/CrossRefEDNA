@@ -4,7 +4,7 @@
 \alias{update_edna_knowledge_center}
 \title{update_edna_knowledge_center}
 \usage{
-update_edna_knowledge_center(destination, backup, email)
+update_edna_knowledge_center(input_destination, data_location, email)
 }
 \arguments{
 \item{email}{}

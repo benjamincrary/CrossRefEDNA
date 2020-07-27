@@ -8,13 +8,13 @@
 #' @export
 #'
 #' @examples
-query_crossref_edna <- function(backup, email ) {
+query_crossref_edna <- function(input_destination, email ) {
 
   #find end date of query
   enddate <- previous_month()
 
   #set output locations
-  backup_destination <- set_backup_destination(backup)
+  backup_destination <- set_backup_destination(input_destination)
 
   #run query loop
   results <- query_crossref_loop(email)

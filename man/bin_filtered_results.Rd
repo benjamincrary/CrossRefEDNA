@@ -4,7 +4,7 @@
 \alias{bin_filtered_results}
 \title{bin_filtered_results}
 \usage{
-bin_filtered_results(filtered_edna, destination)
+bin_filtered_results(filtered_edna, input_destination, data_location)
 }
 \arguments{
 \item{destination}{}

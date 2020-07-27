@@ -6,10 +6,10 @@
 #' @export
 #'
 #' @examples
-check_updated_inputs <- function(destination) {
+check_updated_inputs <- function(input_destination) {
 
-  input <- readRDS(paste0(destination, "Input.RDS"))
-  input_backup <- readRDS(paste0(destination, "Input_backup.RDS"))
+  input <- readRDS(paste0(input_destination, "Input.RDS"))
+  input_backup <- readRDS(paste0(input_destination, "Input_backup.RDS"))
 
   row_status <- ifelse(nrow(input) <= nrow(input_backup), "fail", "pass")
   date_status <- ifelse(max(input$date) <= max(input_backup$date), "fail", "pass")
@@ -29,10 +29,10 @@ check_updated_inputs <- function(destination) {
 #' @export
 #'
 #' @examples
-check_updated_publist <- function(destination) {
+check_updated_publist <- function(input_destination) {
 
-  input <- readRDS(paste0(destination, "AllPubs.RDS"))
-  input_backup <- readRDS(paste0(destination, "AllPubs_backup.RDS"))
+  input <- readRDS(paste0(input_destination, "AllPubs.RDS"))
+  input_backup <- readRDS(paste0(input_destination, "AllPubs_backup.RDS"))
 
   row_status <- ifelse(nrow(input) <= nrow(input_backup), "fail", "pass")
   date_status <- ifelse(max(input$`Publication Date`) <= max(input_backup$`Publication Date`), "fail", "pass")
@@ -55,10 +55,10 @@ check_updated_publist <- function(destination) {
 #' @export
 #'
 #' @examples
-check_updates <- function(destination) {
+check_updates <- function(input_destination) {
 
-  i <- check_updated_inputs(destination)
-  p <- check_updated_publist(destination)
+  i <- check_updated_inputs(input_destination)
+  p <- check_updated_publist(input_destination)
 
   combined_status <- data.frame(status = c(i, p))
 

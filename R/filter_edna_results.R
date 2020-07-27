@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-filter_edna_results <- function(results, destination) {
+filter_edna_results <- function(results, input_destination) {
 
   #get date
   enddate <- previous_month()
@@ -21,7 +21,7 @@ filter_edna_results <- function(results, destination) {
                               grepl("environmental DNA| eDNA|Environmental DNA", abstract) &
                               !grepl("extracellular|Extracellular|biofilm|Biofilm", title))
 
-  saveRDS(filtered_results, paste0(destination, "filtered_eDNA_201001-", substr(enddate, 1,4), substr(enddate,6,7),".rds" ))
+  saveRDS(filtered_results, paste0(input_destination, "filtered_eDNA_resuls.rds" ))
   #saveRDS(filtered_results, paste0(destination, "filteredResults_toBinning.rds"))
 
 
