@@ -69,9 +69,6 @@ bin_filtered_results <- function(filtered_edna, destination) {
     dplyr::distinct()
 
 
-  file.copy(paste0(destination, "Input.RDS"), paste0(destination, "Input_backup.RDS"))
-  file.copy(paste0(destination, "AllPubs.RDS"), paste0(destination, "AllPubs_backup.RDS"))
-
   saveRDS(Summary,paste0(destination, "Input.RDS"))
   saveRDS(AllPubs,paste0(destination, "AllPubs.RDS"))
 
