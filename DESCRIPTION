@@ -1,9 +1,11 @@
 Package: CrossRefEDNA
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 0.1
 Authors@R: 
     person(given = "Benjamin",
-           family = "Crary")
+           family = "Crary", 
+           role = c("aut", "cre"), 
+           email = "bcrary@limno.com")
 Description: Updates CrossRef eDNA query for shiny app
 License: MIT + file LICENSE
 Encoding: UTF-8
