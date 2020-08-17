@@ -12,7 +12,7 @@ check_updated_inputs <- function(input_destination) {
   input_backup <- readRDS(paste0(input_destination, "Input_backup.RDS"))
 
   row_status <- ifelse(nrow(input) <= nrow(input_backup), "fail", "pass")
-  date_status <- ifelse(max(input$date) <= max(input_backup$date), "fail", "pass")
+  date_status <- ifelse(max(input$date) < max(input_backup$date), "fail", "pass")
 
   combined_status <- data.frame(status = c(row_status, date_status))
   input_status <- ifelse(sum(combined_status$status == "fail") > 0, "fail", "pass")
@@ -35,7 +35,7 @@ check_updated_publist <- function(input_destination) {
   input_backup <- readRDS(paste0(input_destination, "AllPubs_backup.RDS"))
 
   row_status <- ifelse(nrow(input) <= nrow(input_backup), "fail", "pass")
-  date_status <- ifelse(max(input$`Publication Date`) <= max(input_backup$`Publication Date`), "fail", "pass")
+  date_status <- ifelse(max(input$`Publication Date`) < max(input_backup$`Publication Date`), "fail", "pass")
 
   combined_status <- data.frame(status = c(row_status, date_status))
   input_status <- ifelse(sum(combined_status$status == "fail") > 0, "fail", "pass")
