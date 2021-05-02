@@ -4,14 +4,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of CrossRefEDNA is to ...
+The goal of CrossRefEDNA is to query the Cross Ref API for eDNA related research.
 
 ## Installation
 
 You can install the released version of CrossRefEDNA from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("CrossRefEDNA")
+devtools::install_github("benjamincrary/CrossRefEDNA")
 ```
 
 ## Example
