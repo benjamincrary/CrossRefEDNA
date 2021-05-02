@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of CrossRefEDNA is to query the Cross Ref API for eDNA related research.
+The goal of CrossRefEDNA is to query the Cross Ref API for eDNA related research and prepare inputs that can be used in a shiny application. 
 
 ## Installation
 
@@ -19,7 +19,12 @@ devtools::install_github("benjamincrary/CrossRefEDNA")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(CrossRefEDNA)
-## basic example code
+
+
+update_edna_knowledge_center("C:/Users/jdoe/Desktop/Projects/RoutineUpdater/input/",
+                             "C:/Users/jdoe/Desktop/Projects/RoutineUpdater/data/",
+                             "bcrary@limno.com")
+
+
 ```
 
