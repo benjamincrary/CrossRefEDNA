@@ -6,7 +6,8 @@
 #' @export
 #'
 #' @examples
-filter_edna_results <- function(results, input_destination) {
+filter_edna_results <- function(results, input_destination, dir_status) {
+
 
   #get date
   enddate <- previous_month()
