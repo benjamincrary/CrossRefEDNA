@@ -14,7 +14,7 @@ update_edna_knowledge_center <- function(input_destination, data_location, email
   dir_status <- check_directories(input_destination, data_location)
 
   #2. query
-  results <- query_crossref_edna(input_destination, email, dir_status)
+  results <- query_crossref_edna(input_destination, email)
 
   #3. filter
   filtered_edna <- filter_edna_results(results, input_destination)

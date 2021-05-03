@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-filter_edna_results <- function(results, input_destination, dir_status) {
+filter_edna_results <- function(results, input_destination) {
 
 
   #get date

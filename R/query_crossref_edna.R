@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-query_crossref_edna <- function(input_destination, email, dir_status) {
+query_crossref_edna <- function(input_destination, email) {
 
   #find end date of query
   enddate <- previous_month()
