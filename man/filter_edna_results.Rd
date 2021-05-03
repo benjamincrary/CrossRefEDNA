@@ -4,7 +4,7 @@
 \alias{filter_edna_results}
 \title{filter_edna_results}
 \usage{
-filter_edna_results(results, input_destination)
+filter_edna_results(results)
 }
 \arguments{
 \item{results}{}

@@ -10,19 +10,22 @@
 #' @examples
 update_edna_knowledge_center <- function(input_destination, data_location, email) {
 
-  #1. query
-  results <- query_crossref_edna(input_destination, email)
+  #1. verify input_destination and data_location exist
+  check_directories(input_destination, data_location)
 
-  #2. filter
-  filtered_edna <- filter_edna_results(results, input_destination)
+  #2. query and filter
+  filtered_results <- query_crossref_edna(input_destination, email)
 
-  #3. bin
-  bin_filtered_results(filtered_edna, input_destination, data_location)
+  #3. save filtered results
+  save_filtered_results(filtered_results, input_destination)
 
-  #4. check and update inputs
+  #4. bin
+  bin_filtered_results(filtered_results, input_destination, data_location)
+
+  #5. check and update inputs
   finalize_update(input_destination)
 
-  #5. commit changes
+  #6. commit changes (not yet incorporated, need client input/feedback)
 
 
 }
