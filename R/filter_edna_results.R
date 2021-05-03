@@ -22,7 +22,7 @@ filter_edna_results <- function(results, input_destination) {
                               grepl("environmental DNA| eDNA|Environmental DNA", abstract) &
                               !grepl("extracellular|Extracellular|biofilm|Biofilm", title))
 
-  saveRDS(filtered_results, paste0(input_destination, "filtered_eDNA_resuls.rds" ))
+  saveRDS(filtered_results, paste0(input_destination, "filtered_eDNA_results.rds" ))
   #saveRDS(filtered_results, paste0(destination, "filteredResults_toBinning.rds"))
 
 
