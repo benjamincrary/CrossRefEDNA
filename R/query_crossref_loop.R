@@ -15,7 +15,7 @@ query_crossref_loop <- function(email) {
   #set up loop
   results <- NULL
   loops <- query_n_loops(email)
-  #loops <- 15 #dev option only
+  loops <- 2 #dev option only
   loopseq <- seq(1:loops)
 
   print(paste0(loops, " total loops. Starting loop 1..."))
@@ -43,5 +43,5 @@ query_crossref_loop <- function(email) {
 
   print("Query and filter complete. Saving filtered results now...")
 
-  return(filtered_results)
+  return(results)
 }

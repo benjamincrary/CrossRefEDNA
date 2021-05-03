@@ -6,11 +6,20 @@
 #' @export
 #'
 #' @examples
-filter_edna_results <- function(results) { #, input_destination) {
+filter_edna_results <- function(results) {
 
 
   #get date
   enddate <- previous_month()
+
+
+  #add columns if missing
+  results <- results %>%
+    mutate(title = ifelse("title" %in% colnames(results), title, list())) %>%
+    mutate(subtitle = ifelse("subtitle" %in% colnames(results), subtitle, list())) %>%
+    mutate(subject = ifelse("subject" %in% colnames(results), subject, list())) %>%
+    mutate(abstract = ifelse("abstract" %in% colnames(results), abstract, list()))
+
 
   #Filter out false hits
   filtered_results <- subset(results, grepl("environmental DNA| eDNA|Environmental DNA", title) &
