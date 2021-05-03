@@ -11,6 +11,8 @@
 #' @examples
 bin_filtered_results <- function(filtered_edna, input_destination, data_location) {
 
+  print("Binning filtered results...")
+
   taxonomies <- load_taxonomies(data_location)
   categories <- load_categories(data_location)
 

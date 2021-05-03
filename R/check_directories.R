@@ -6,7 +6,7 @@
 #' @return
 #' @export
 #'
-#' @examples check_directories("C:/Users/jdoe/inputs/", "C:/Users/jdoe/data/")
+#' @examples
 check_directories <- function(input_location, data_location) {
 
   input_status <- dir.exists(input_location)
