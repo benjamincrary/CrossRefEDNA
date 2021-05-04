@@ -15,7 +15,7 @@ query_crossref_loop <- function(email) {
   #set up loop
   results <- NULL
   loops <- query_n_loops(email)
-  loops <- 20 #dev option only
+  #loops <- 20 #dev option only
   loopseq <- seq(1:loops)
 
   print(paste0(loops, " total loops. Starting loop 1..."))
