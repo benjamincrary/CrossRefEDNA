@@ -14,11 +14,11 @@ filter_edna_results <- function(results) {
 
 
   #add columns if missing
-  results <- results %>%
-    dplyr::mutate(title = ifelse("title" %in% colnames(results), title, list())) %>%
-    dplyr::mutate(subtitle = ifelse("subtitle" %in% colnames(results), subtitle, list())) %>%
-    dplyr::mutate(subject = ifelse("subject" %in% colnames(results), subject, list())) %>%
-    dplyr::mutate(abstract = ifelse("abstract" %in% colnames(results), abstract, list()))
+# results <- results %>%
+#    dplyr::mutate(title = ifelse("title" %in% colnames(results), title, list())) %>%
+#    dplyr::mutate(subtitle = ifelse("subtitle" %in% colnames(results), subtitle, list())) %>%
+#    dplyr::mutate(subject = ifelse("subject" %in% colnames(results), subject, list())) %>%
+#    dplyr::mutate(abstract = ifelse("abstract" %in% colnames(results), abstract, list()))
 
 
   #Filter out false hits
